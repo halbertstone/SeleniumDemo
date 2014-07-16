@@ -28,7 +28,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class demoMain {
+public class demoMainB {
 
 	/**
 	 * @param filePathName where to store the screen shot
@@ -95,11 +95,11 @@ public class demoMain {
 		
 		//== Begin Session, navigate to web page
 
-		wDriver.get(demoMain.webClientURL);		
+		wDriver.get(demoMainB.webClientURL);		
 		wDriver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
 		
 		//-- collect page source
-		String pageOne = demoMain.collectPageSrc("c:\\tmp\\LoginPage.html", wDriver);
+		String pageOne = demoMainB.collectPageSrc("c:\\tmp\\LoginPage.html", wDriver);
 		
 		//## IF Login page continue
 		Boolean isLogin = pageOne.contains("Remember my username");
@@ -138,7 +138,7 @@ public class demoMain {
 		//---- Enter Username
 		userNameInput.sendKeys("DSFCU24");	
 		// take the screenshot at the end of every test
-		demoMain.takePix("c:\\tmp\\userNameLogin.png", wDriver);
+		demoMainB.takePix("c:\\tmp\\userNameLogin.png", wDriver);
         loginButton.click();
           
         //======================
@@ -146,7 +146,7 @@ public class demoMain {
         
         //------ need to determine which screen has been displayed for this MFA flow        
 		wDriver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
-		String secondPage = demoMain.collectPageSrc("c:\\tmp\\2ndPage.html", wDriver);		
+		String secondPage = demoMainB.collectPageSrc("c:\\tmp\\2ndPage.html", wDriver);		
 		Boolean isChallengePage = secondPage.contains("Your Secret Question");
 		Boolean isPassPhrasePage2 = secondPage.contains("Do you see the correct picture and phrase?");
 		        
@@ -176,7 +176,7 @@ public class demoMain {
 			}
 			
         	inputAnswer.sendKeys("Test1");
-        	demoMain.takePix("C:\\tmp\\secondPage.png", wDriver);
+        	demoMainB.takePix("C:\\tmp\\secondPage.png", wDriver);
         	submitButton.click();
         	
         }else {
@@ -186,7 +186,7 @@ public class demoMain {
         
         //------ need to determine which screen has been displayed for this MFA flow        
 		wDriver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
-		String thirdPage = demoMain.collectPageSrc("c:\\tmp\\3ndPage.html", wDriver);	
+		String thirdPage = demoMainB.collectPageSrc("c:\\tmp\\3ndPage.html", wDriver);	
 		Boolean isPassPhrasePage3 = thirdPage.contains("Do you see the correct picture and phrase?");
 
        if (isPassPhrasePage2 || isPassPhrasePage3) {

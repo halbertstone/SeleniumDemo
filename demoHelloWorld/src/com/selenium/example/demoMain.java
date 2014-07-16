@@ -156,7 +156,7 @@ public class demoMain {
         //-- MFA FLOW 2nd screen possibilities: A: Challenge                
         
         //-- 
-        //-- Page Elements to collect
+        //-- MFA CHALLENGE Page Elements to collect
         	WebElement inputAnswer = null;
         	WebElement submitButton =  null;
             WebElement title =  null;
@@ -197,21 +197,47 @@ public class demoMain {
         //============== NEW Screen ========
         //-- MFA FLOW 2nd screen possibilities: B: SiteKey-Passphrase-Password
       
-				
-        //-- <div class="login-title">Your picture and phrase</div>
-        //-- <div class="phrase-question">Do you see the correct picture and phrase?</div>
-				
-        //-- <img class="pict" src="data:image/png;base64,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">
-        //-- <input id="password" type="password" autocorrect="off" autocapitalize="off" maxlength="32" autocomplete="off">
-				
-        //-- <label class="fine question">If the picture or phrase is not correct, do not enter your password. Please phone 1-602-433-7000 for help.</label>
-        //-- If the picture or phrase is not correct, do not enter your password. Please phone 1-602-433-7000 for help.		
-        //-- <label class="fine question">If the picture or phrase is not correct, do not enter your password. Please phone 1-602-433-7000 for help.</label>
-        //-- <a id="cancel-button" class="button warning-btn">Cancel</a>
-				
-        //-- <a id="login-button" class="button">Log in</a>
         //-- 
-       // }		
+        //-- SiteKey-Passphrase-Password Page Elements to collect
+         		
+           WebElement titlePwd = null;
+           WebElement queryPwd = null;
+           WebElement siteKeyPixPwd = null;
+           WebElement passwordFieldPwd = null;
+           WebElement warnWrongPixPwd = null;
+           WebElement cancelButtonPwd = null;
+           WebElement loginButtonPwd = null;
+  
+			try{
+				titlePwd = wDriver.findElement( By.className("login-title"));  //-- <div class="login-title">Your picture and phrase</div>
+				queryPwd = wDriver.findElement( By.className("phrase-question"));  //-- <div class="phrase-question">Do you see the correct picture and phrase?</div>
+				siteKeyPixPwd = wDriver.findElement(By.className("pict"));  //-- <img class="pict" src="data:image/png;base64,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">
+				passwordFieldPwd = wDriver.findElement(By.id("password"));   //-- <input id="password" type="password" autocorrect="off" autocapitalize="off" maxlength="32" autocomplete="off">
+				warnWrongPixPwd = wDriver.findElement(By.className("fine"));   //-- <label class="fine question">If the picture or phrase is not correct, do not enter your password. Please phone 1-602-433-7000 for help.</label>
+				cancelButtonPwd = wDriver.findElement(By.id("cancel-button"));  //-- <a id="cancel-button" class="button warning-btn">Cancel</a>
+				
+				
+				
+				//NOTE: There are two elements with id="login-button"  The first is 'Not visible' so there is a problem
+				
+//				 <div class="button-container">
+//				 <a class="button single_button" id="login-button" enabled="false">Log in</a>
+//				 </div>			
+				
+//				<div style="margin-top:1em;" class="button-container">
+//				 <a class="button warning-btn" id="cancel-button">Cancel</a> 
+//				 <a class="button" id="login-button">Log in</a>
+//				 </div>
+				loginButtonPwd = wDriver.findElement(By.id("login-button"));   //-- <a id="login-button" class="button">Log in</a>
+			}
+			catch (NoSuchElementException e){
+				e.printStackTrace();
+			}
+       
+			passwordFieldPwd.sendKeys("Abcd1234");
+        	demoMain.takePix("C:\\tmp\\MFA-PassSitePhrasePage.png", wDriver);
+        	loginButtonPwd.click();
+
  	
         //============== NEW Screen ========
         
@@ -247,7 +273,7 @@ public class demoMain {
 
 	}
 
-}
+  }
 }
 
 
